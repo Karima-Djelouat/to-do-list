@@ -25,9 +25,31 @@ class Database
         $this->exec($query);
     }
 
+    public function getTasks(): array
+    {
+        $tasks= [];
+
+        $query ="SELECT * FROM task";
+
+        $data = $this->db->query($query);
+
+        while ($row = $data->fetchArray()) {
+             $tasks[] = $row;
+        }
+
+        return $tasks;
+    }
+
     public function addTask(string $name): void
     {
-        $query = "INSERT INTO task (`done`, `name`) VALUES (false, '$name')";
+        $query = "INSERT INTO task (`done`, `name`) VALUES (false, '$name');";
+
+        $this->exec($query);
+    }
+
+    public function updateTask( int $id, int $done)
+    {
+        $query = "UPDATE task SET `done` = $done WHERE `id` = $id;";
 
         $this->exec($query);
     }

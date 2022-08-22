@@ -1,2 +1,3 @@
 # to-do-list
-exercices (PHP, JS et SQLite)
+exercises (PHP, JS and SQLite)
+goal: db without the need of a server

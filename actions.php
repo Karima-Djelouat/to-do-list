@@ -13,7 +13,7 @@ $action = (isset($_POST['action'])) ? $_POST['action'] : $data['action'];
 
 switch ($action) {
     case 'add_task':
-
+        addTask();
         break;
 
     default:

@@ -11,7 +11,7 @@ const updateTask = async function(e) {
         method: 'PUT',
         body: JSON.stringify({
             action: 'update_task',
-            one: e.target.checked, // or : "e.target.checked"
+            done: e.target.checked, // or : "this.checked"
             taskId: this.dataset.id
         })
     })
